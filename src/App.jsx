@@ -12,11 +12,11 @@ function App() {
     videoRef.current.playbackRate = 2;
   }, [])
 
-  useEffect(() => {
-    if (bgLoaded) {
-      audioRef.current.play();
-    }
-  }, [bgLoaded])
+
+  const handleVideoEnd = () => {
+    audioRef.current.play();
+    setBgLoaded(true)
+  };
 
 
   return (
@@ -26,7 +26,7 @@ function App() {
         Your browser does not support the audio element.
       </audio>
       <div className='static-bg' />
-      <video autoPlay muted id="bgVideo" ref={videoRef} onEnded={() => setBgLoaded(true)}>
+      <video autoPlay muted id="bgVideo" ref={videoRef} onEnded={handleVideoEnd}>
         <source src="/bg_video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
