@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const Contract = ({ bgLoaded }) => {
   const [isCopied, setIsCopied] = useState(false);
-  const textToCopy = "Ur23EJBKhR2Tq5rfXabSWCDHVf6tT6BUa6ciHy8vine";
+  const textToCopy = "FgkbcKNeSJtQGZ4WEweRWh8kSveoJvszdbX9CKMdeep";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(textToCopy)
@@ -19,7 +19,7 @@ const Contract = ({ bgLoaded }) => {
   return (
     <div className={'contract-wrapper ' + (bgLoaded ? 'loaded' : '')}>
       {isCopied ? <p>Contract copied!</p> : <><p>
-        Ur23EJBKhR2Tq5rfXabSWCDHVf6tT6BUa6ciHy8vine
+        FgkbcKNeSJtQGZ4WEweRWh8kSveoJvszdbX9CKMdeep
       </p>
         <button onClick={handleCopy} className='copy-btn'>Copy</button>
       </>}

@@ -45,6 +45,7 @@
 
 .social-link {
   transition: all 200ms ease-out;
+  color: #FFFF00;
 
   @media (max-width: 768px) {
     flex: 1 1 100%;
@@ -168,6 +169,8 @@
   word-break: break-word;
 
   text-align: center;
+
+  color: #FFFF00;
 }
 
 .copy-btn {
