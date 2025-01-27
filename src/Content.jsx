@@ -37,7 +37,7 @@ const Content = () => {
   };
 
   return <>
-    <audio loop={true} muted={true} ref={audioRef}>
+    <audio loop={true} ref={audioRef}>
       <source src="/letsgoriceniggas.m4a" type="audio/mp4" />
       Your browser does not support the audio element.
     </audio>
