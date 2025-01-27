@@ -1,0 +1,88 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: red;
+
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+  opacity: 0;
+
+
+  width: 100vw;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 5rem;
+
+  gap: 3rem;
+
+  transition: all 300ms ease-out;
+}
+
+.header.loaded {
+  z-index: 10;
+
+  opacity: 1;
+}
+
+.social-link {
+  transition: all 200ms ease-out;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  /* Ensures the video behaves like "background-size: cover" */
+  z-index: 1;
+  /* Keeps the video behind other content */
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.static-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  z-index: 1;
+  display: none;
+
+  background-image: url('/bg_static.png');
+  /* Add the background image */
+  background-repeat: no-repeat;
+  /* Prevent the image from repeating */
+  background-position: center;
+  /* Center the image in the div */
+  background-size: contain;
+
+  @media (max-width: 1024px) {
+    display: block;
+  }
+}
