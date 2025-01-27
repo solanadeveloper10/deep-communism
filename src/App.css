@@ -3,7 +3,8 @@
   height: 100vh;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
 
   background-color: red;
@@ -24,10 +25,12 @@
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
-  padding: 1rem 5rem;
+  font-size: 1.5rem;
+
+  padding: 2rem 5rem;
 
   gap: 3rem;
 
@@ -42,6 +45,13 @@
 
 .social-link {
   transition: all 200ms ease-out;
+
+  @media (max-width: 768px) {
+    flex: 1 1 100%;
+
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .social-link:hover {
@@ -55,12 +65,13 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+
   /* Ensures the video behaves like "background-size: cover" */
   z-index: 1;
   /* Keeps the video behind other content */
 
   @media (max-width: 1024px) {
-    display: none;
+    opacity: 0;
   }
 }
 
@@ -72,17 +83,104 @@
   height: 100vh;
   object-fit: contain;
   z-index: 1;
-  display: none;
 
-  background-image: url('/bg_static.png');
+  background-image: url('/bg_static.webp');
   /* Add the background image */
   background-repeat: no-repeat;
   /* Prevent the image from repeating */
   background-position: center;
   /* Center the image in the div */
   background-size: contain;
+  display: none;
 
   @media (max-width: 1024px) {
     display: block;
   }
+}
+
+.play-btn {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 250px;
+  height: 250px;
+
+  background-color: #FFFF00;
+
+  background-image: url('/play_icon.png');
+  /* Add the background image */
+  background-repeat: no-repeat;
+  /* Prevent the image from repeating */
+  background-position: center;
+  /* Center the image in the div */
+  background-size: 65%;
+
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  border-radius: 10%;
+
+  transition: all 200ms ease-out;
+}
+
+.play-btn:hover {
+  background-color: #afaf02;
+}
+
+.contract-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  z-index: 15;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  font-size: 2rem;
+
+  margin-bottom: 120px;
+
+  z-index: -1;
+  opacity: 0;
+
+  transition: all 300ms ease-out;
+
+  @media (max-width: 875px) {
+    max-width: 95vw;
+  }
+}
+
+.contract-wrapper.loaded {
+  z-index: 10;
+
+  opacity: 1;
+}
+
+.contract-wrapper p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  text-align: center;
+}
+
+.copy-btn {
+  cursor: pointer;
+
+  padding: 10px;
+
+  font-size: 1rem;
+}
+
+.general-wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: red;
 }
